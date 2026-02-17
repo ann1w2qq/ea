@@ -1,0 +1,165 @@
+/* Сброс отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg, #0a0a0a 0%, #1a0c0c 100%);
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Кнопка "главная" */
+a {
+  text-decoration: none;
+  margin-bottom: 20px;
+  
+}
+
+button {
+  width: 130px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 40px;
+  background: #e73434;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(231, 52, 52, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button:hover {
+  background: #ff4f4f;
+  box-shadow: 0 0 20px rgba(231, 52, 52, 0.7);
+  transform: scale(1.02);
+}
+
+/* Основной контейнер */
+.cont {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(30, 15, 15, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(231, 52, 52, 0.3);
+  border-radius: 40px;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: 0 25px 50px -8px rgba(231, 52, 52, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.cont:hover {
+  box-shadow: 0 30px 60px -8px rgba(231, 52, 52, 0.7);
+}
+
+/* Заголовки */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(231, 52, 52, 0.7);
+  background: linear-gradient(135deg, #fff 0%, #e73434 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #ffb3b3;
+  text-shadow: 0 0 8px rgba(231, 52, 52, 0.5);
+  font-weight: 400;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #e73434;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(231,52,52,0.5);
+}
+
+th {
+  background: #2f1a1a;
+  color: #ffb6b6;
+  padding: 14px 12px;
+  font-weight: 600;
+}
+
+td {
+  background: #1f1212;
+  padding: 12px;
+  color: #f0d5d5;
+  border-bottom: 1px solid #e7343433;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Сообщение об отсутствии бронирований */
+p {
+  font-size: 1.3rem;
+  color: #b36666;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px dashed #e73434;
+  margin: 20px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .cont {
+    padding: 20px 10px;
+    border-radius: 30px;
+  }
+  th, td {
+    padding: 10px 6px;
+    font-size: 0.9rem;
+  }
+  button {
+    width: 100px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+.cancel-btn {
+    background: transparent;
+    border: 1px solid #e73434;
+    color: #e73434;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: bold;
+}
+.cancel-btn:hover {
+    background: #e73434;
+    color: white;
+    box-shadow: 0 0 10px #e73434;
+}

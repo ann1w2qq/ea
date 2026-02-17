@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(145deg, #0a0a0a 0%, #1a0c0c 100%);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #fff 0%, #e73434 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(231,52,52,0.5);
+}
+
+/* Контейнер для формы и списка */
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(30, 15, 15, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(231, 52, 52, 0.3);
+  border-radius: 40px;
+  padding: 30px;
+  box-shadow: 0 25px 50px -8px rgba(231, 52, 52, 0.4);
+  transition: box-shadow 0.3s;
+}
+
+.container:hover {
+  box-shadow: 0 30px 60px -8px rgba(231, 52, 52, 0.7);
+}
+
+/* Список компьютеров (сетка) */
+#free-computers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+}
+
+.computer-card {
+  background: rgba(20, 10, 10, 0.9);
+  border: 2px solid #e7343433;
+  border-radius: 30px;
+  padding: 20px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.5);
+  color: #ffc7c7;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.computer-card:hover {
+  border-color: #e73434;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -5px #e73434;
+  background: #2a0f0f;
+}
+
+.computer-card.selected {
+  border-color: #e73434;
+  background: #3d1a1a;
+  box-shadow: 0 0 20px #e73434;
+}
+
+/* Форма */
+#book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Скрытое поле для ID компьютера */
+#computer_id {
+  display: none; /* Полностью скрываем, пользователь выбирает карточкой */
+}
+
+/* Кнопка отправки */
+#book-form button {
+  padding: 14px 40px;
+  background: transparent;
+  border: 2px solid #e73434;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(231, 52, 52, 0.3);
+  letter-spacing: 1px;
+  width: auto;
+  min-width: 280px;
+}
+
+#book-form button:hover {
+  background: #e73434;
+  box-shadow: 0 0 30px #e73434;
+  transform: scale(1.02);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 20px;
+    border-radius: 30px;
+  }
+  #free-computers-list {
+    grid-template-columns: 1fr;
+  }
+  .computer-card {
+    padding: 15px;
+  }
+  #book-form button {
+    width: 100%;
+    min-width: auto;
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+/* Индикатор загрузки */
+.spinner {
+    text-align: center;
+    padding: 20px;
+    color: #e73434;
+    font-size: 1.2rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Служебные карточки (нет компьютеров, ошибка) */
+.computer-card.no-computers,
+.computer-card.error {
+    cursor: default;
+    background: rgba(50, 20, 20, 0.8);
+    border-color: #732626;
+    pointer-events: none;
+}
+
+.computer-card.error {
+    color: #ff8a8a;
+}
+
+
+.booking-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(20, 10, 10, 0.6);
+    border-radius: 30px;
+    border: 1px solid #e7343433;
+}
+
+.booking-controls label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ffc7c7;
+    font-weight: 500;
+    gap: 5px;
+}
+
+.booking-controls input {
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 1px solid #e73434;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1rem;
+}
+
+.booking-controls input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #e73434;
+}
